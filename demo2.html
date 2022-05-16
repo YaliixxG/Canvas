@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>demo2</title>
+    </head>
+    <body>
+        <canvas id="canvas" width="400" height="400"></canvas>
+        <script>
+            window.onload = function() {
+                let cvs = document.getElementById('canvas');
+                let ctx = cvs.getContext('2d');
+
+                // 第一条线
+                ctx.moveTo(10, 10); // 确定起点：将笔移动到画布的哪一点
+                ctx.lineTo(80, 80); // 确定终点：将笔画到哪一点
+
+                // 第二条线
+                ctx.moveTo(150, 120); // 重新确定起点
+                ctx.lineTo(160, 160);
+
+                // 第三条线 不重新确定起点 而是直接接着上次的终点绘制
+                ctx.lineTo(200, 200); // 默认接着上次的终点绘制
+                ctx.lineTo(180, 300);
+
+                // 连线
+                ctx.stroke();
+            };
+        </script>
+    </body>
+</html>
