@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>demo1</title>
+        <style>
+            #canvas {
+                width: 200px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            window.onload = function() {
+                let cvs = document.getElementById('canvas');
+                let info = `宽度：${cvs.width}，高度：${cvs.height}`;
+                alert(info); // 宽度：300，高度：150
+            };
+        </script>
+    </body>
+</html>
