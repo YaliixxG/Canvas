@@ -13,15 +13,21 @@
             height="400"
             style="border: 1px solid #000;"
         ></canvas>
+        <input id="Input" type="number" />
+        <button id="submit">输入顶点数绘制正多边形</button>
         <script>
             window.onload = function() {
+                let submit = document.getElementById('submit');
+                let Input = document.getElementById('Input');
                 let cvs = document.getElementById('canvas');
                 let ctx = cvs.getContext('2d');
 
-                // 正六边形
-                draw(200, 200, 100, 6, ctx);
-                ctx.fillStyle = 'green';
-                ctx.fill();
+                submit.onclick = function() {
+                    ctx.clearRect(0, 0, cvs.width, cvs.height);
+                    draw(200, 200, 100, Input.value, ctx);
+                    ctx.fillStyle = 'hotpink';
+                    ctx.fill();
+                };
             };
             function draw(startX, startY, size, n, ctx) {
                 ctx.beginPath();
