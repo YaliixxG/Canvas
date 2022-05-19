@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>demo9</title>
+    </head>
+    <body>
+        <canvas
+            id="canvas"
+            width="400"
+            height="400"
+            style="border: 1px solid #000;"
+        ></canvas>
+        <script>
+            window.onload = function() {
+                let cvs = document.getElementById('canvas');
+                let ctx = cvs.getContext('2d');
+
+                // 正六边形
+                draw(200, 200, 100, 6, ctx);
+                ctx.fillStyle = 'green';
+                ctx.fill();
+            };
+            function draw(startX, startY, size, n, ctx) {
+                ctx.beginPath();
+
+                // 正弦、余弦、正割或余割的基本周期是全圆，也就是 2π弧度或 360°；正切或余切的基本周期是半圆，也就是 π 弧度或 180°。
+                let de = (2 * Math.PI) / n;
+                for (let i = 0; i < n; i++) {
+                    let x = Math.cos(i * de) * size;
+                    let y = Math.sin(i * de) * size;
+
+                    ctx.lineTo(x + startX, y + startY);
+                }
+                ctx.closePath();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>demo8</title>
+    </head>
+    <body>
+        <canvas
+            id="canvas"
+            width="400"
+            height="400"
+            style="border: 1px solid #000;"
+        ></canvas>
+        <button id="clearPart">清除指定矩形</button>
+        <button id="clearCanvas">清空整个 canvas</button>
+        <script>
+            window.onload = function() {
+                let cvs = document.getElementById('canvas');
+                let ctx = cvs.getContext('2d');
+
+                // 描边矩形
+                ctx.strokeStyle = 'red';
+                ctx.rect(10, 10, 200, 200);
+                ctx.stroke();
+
+                // 填充矩形
+                ctx.fillStyle = 'yellow';
+                ctx.rect(10, 10, 200, 200);
+                ctx.fill();
+
+                // 清除指定区域矩形
+                // ctx.clearRect(20, 20, 80, 80);
+
+                // 绑定事件清除 若起点位置不在矩形内，无效；宽高度超过矩形 有效
+                let clearPart = document.getElementById('clearPart');
+                clearPart.onclick = function() {
+                    ctx.clearRect(20, 20, 80, 80);
+                };
+
+                // 清空整个 canvas
+                let clearCanvas = document.getElementById('clearCanvas');
+                clearCanvas.onclick = function() {
+                    ctx.clearRect(0, 0, cvs.width, cvs.height);
+                };
+            };
+        </script>
+    </body>
+</html>
