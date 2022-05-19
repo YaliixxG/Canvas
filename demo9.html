@@ -29,6 +29,15 @@
                     ctx.fill();
                 };
             };
+
+            /**
+             * @description 绘制正多边形
+             * @param {Number} startX 中心点横坐标
+             * @param {Number} startY 中心点纵坐标
+             * @param {Number} size 边长
+             * @param {Number} n 顶点数（几边形）
+             * @param {Object} ctx 上下文对象
+             */
             function draw(startX, startY, size, n, ctx) {
                 ctx.beginPath();
 
