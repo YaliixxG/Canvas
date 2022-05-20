@@ -58,3 +58,9 @@ Canvas API 提供了一个通过 JavaScript 和 HTML 的<canvas>元素来绘制�
 
 -   arc(圆心点 x, 圆心点 y, 半径 r, 开始角度，结束角度，是否逆时针)，注意角度为弧度制
 -   每次绘制圆的步骤：ctx.beginPath()，arc()画圆，ctx.closePath()，描边 stroke()/填充 fill()操作 [demo12](https://github.com/YaliixxG/Canvas/blob/main/demo12.html)
+
+#### 弧线
+
+-   arc()画弧线，与画圆唯一的区别是弧线为非闭合图形不需要 closePath() [demo13](https://github.com/YaliixxG/Canvas/blob/main/demo13.html)
+
+-   直线与弧线的结合 [demo14](https://github.com/YaliixxG/Canvas/blob/main/demo14.html)

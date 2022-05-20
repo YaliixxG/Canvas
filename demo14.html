@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>demo14</title>
+    </head>
+    <body>
+        <canvas
+            id="canvas"
+            width="400"
+            height="400"
+            style="border: 1px solid #000;"
+        ></canvas>
+        <script>
+            window.onload = function() {
+                let cvs = document.getElementById('canvas');
+                let ctx = cvs.getContext('2d');
+
+                ctx.moveTo(100, 100);
+                ctx.lineTo(200, 100);
+                ctx.strokeStyle = 'blue';
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(
+                    200,
+                    200,
+                    100,
+                    (270 * Math.PI) / 180,
+                    (360 * Math.PI) / 180,
+                    false
+                );
+                ctx.moveTo(300, 200);
+                ctx.lineTo(300, 300);
+                ctx.strokeStyle = 'blue';
+                ctx.stroke();
+            };
+        </script>
+    </body>
+</html>
