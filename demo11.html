@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>demo11</title>
+    </head>
+    <body>
+        <canvas
+            id="canvas"
+            width="400"
+            height="400"
+            style="border: 1px solid #000;"
+        ></canvas>
+        <script>
+            window.onload = function() {
+                let cvs = document.getElementById('canvas');
+                let ctx = cvs.getContext('2d');
+                draw(40, 6, ctx, 13, 28);
+            };
+            function draw(size, n, ctx, colorGap1, colorGap2) {
+                for (let i = 0; i < n; i++) {
+                    for (let j = 0; j < n; j++) {
+                        ctx.fillStyle = `rgb(${255 - i * colorGap1}, ${255 -
+                            j * colorGap2}, 0)`;
+                        ctx.fillRect(j * size, i * size, size, size);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

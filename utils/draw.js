@@ -41,3 +41,21 @@ const star = (startX, startY, size, ctx) => {
     }
     ctx.closePath();
 };
+
+/**
+ * @description 绘制方格调色板
+ * @param {Number} size 单元方格长宽（正方形）
+ * @param {Number} n 长宽单元格个数
+ * @param {Object} ctx 上下文对象
+ * @param {Number} colorGap1 色差间隙1
+ * @param {Number} colorGap2 色差间隙2
+ */
+const palette = (size, n, ctx, colorGap1, colorGap2) => {
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            ctx.fillStyle = `rgb(${255 - i * colorGap1}, ${255 -
+                j * colorGap2}, 0)`;
+            ctx.fillRect(j * size, i * size, size, size);
+        }
+    }
+};

@@ -44,3 +44,7 @@ Canvas API 提供了一个通过 JavaScript 和 HTML 的<canvas>元素来绘制�
 
     -   Canvas 元素中 y 轴向下为正，sin 的值要为负
     -   Math.sin(X), Math.cos(X)，X 是采用的弧度制，记得转换
+
+#### 方格调色盘
+
+-   由于 X，Y 轴都需要绘制，双循环 [demo10](https://github.com/YaliixxG/Canvas/blob/main/demo11.html)
