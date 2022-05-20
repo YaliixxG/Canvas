@@ -48,3 +48,13 @@ Canvas API 提供了一个通过 JavaScript 和 HTML 的<canvas>元素来绘制�
 #### 方格调色盘
 
 -   由于 X，Y 轴都需要绘制，双循环 [demo11](https://github.com/YaliixxG/Canvas/blob/main/demo11.html)
+
+### 曲线图形
+
+-   曲线：不一定是弧线，但是包括弧线
+-   弧线：弧线是圆周的一部分
+
+#### 圆形
+
+-   arc(圆心点 x, 圆心点 y, 半径 r, 开始角度，结束角度，是否逆时针)，注意角度为弧度制
+-   每次绘制圆的步骤：ctx.beginPath()，arc()画圆，ctx.closePath()，描边 stroke()/填充 fill()操作 [demo12](https://github.com/YaliixxG/Canvas/blob/main/demo12.html)
