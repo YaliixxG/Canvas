@@ -62,5 +62,12 @@ Canvas API 提供了一个通过 JavaScript 和 HTML 的<canvas>元素来绘制�
 #### 弧线
 
 -   arc()画弧线，与画圆唯一的区别是弧线为非闭合图形不需要 closePath() [demo13](https://github.com/YaliixxG/Canvas/blob/main/demo13.html)
-
 -   直线与弧线的结合 [demo14](https://github.com/YaliixxG/Canvas/blob/main/demo14.html)
+-   arcTo(控制点 x, 控制点 y, 结束点 x, 结束点 y, 半径 r)画弧线 [demo15](https://github.com/YaliixxG/Canvas/blob/main/demo15.html)
+    -   由 moveTo()/lineTo()决定开始点
+    -   利用开始点、控制点和结束点所形成的夹角，绘制一段与夹角的两边相切并且半径为 r 的圆弧
+    -   如果开始点与你确定的半径，夹角构不成合理的弧线时，arcTo() 会自动将你的开始点连条线至“合理的弧线”起点 [demo16](https://github.com/YaliixxG/Canvas/blob/main/demo16.html)
+
+#### 圆角矩形
+
+-   圆角矩形需要确定八个点，然后依次绘制就行 [demo17](https://github.com/YaliixxG/Canvas/blob/main/demo17.html)

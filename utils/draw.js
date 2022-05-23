@@ -59,3 +59,49 @@ const palette = (size, n, ctx, colorGap1, colorGap2) => {
         }
     }
 };
+
+/**
+ * 绘制圆角矩形
+ * @param {Number} offsetX 圆角矩形距离 x 轴的距离
+ * @param {Number} offsetY 圆角矩形距离 y 轴的距离
+ * @param {Number} width 矩形直线宽
+ * @param {Number} height 矩形直线高
+ * @param {Number} r 圆角半径
+ * @param {Object} ctx 上下文对象
+ */
+const draw = (offsetX, offsetY, width, height, r, ctx) => {
+    ctx.beginPath();
+    ctx.arc(
+        offsetX + r,
+        offsetY + r,
+        r,
+        (180 * Math.PI) / 180,
+        (270 * Math.PI) / 180
+    );
+    ctx.lineTo(offsetX + r + width, offsetY);
+    ctx.arc(
+        offsetX + r + width,
+        offsetY + r,
+        r,
+        (270 * Math.PI) / 180,
+        (360 * Math.PI) / 180
+    );
+    ctx.lineTo(offsetX + width + 2 * r, offsetY + r + height);
+    ctx.arc(
+        offsetX + r + width,
+        offsetY + r + height,
+        r,
+        0,
+        (90 * Math.PI) / 180
+    );
+    ctx.lineTo(offsetX + r, offsetY + 2 * r + height);
+    ctx.arc(
+        offsetX + r,
+        offsetY + r + height,
+        r,
+        (90 * Math.PI) / 180,
+        (180 * Math.PI) / 180
+    );
+    ctx.lineTo(offsetX, offsetY + r);
+    ctx.closePath();
+};
