@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>demo19</title>
+    </head>
+    <body>
+        <canvas
+            id="canvas"
+            width="700"
+            height="700"
+            style="border: 1px solid #000;"
+        ></canvas>
+        <script>
+            window.onload = function() {
+                let cvs = document.getElementById('canvas');
+                let ctx = cvs.getContext('2d');
+
+                // 画爱心，不太顺滑的爱心 = =
+                ctx.beginPath();
+                ctx.moveTo(100, 300);
+                ctx.quadraticCurveTo(100, 100, 300, 250);
+                ctx.quadraticCurveTo(500, 100, 500, 300);
+                ctx.quadraticCurveTo(500, 400, 300, 500);
+                ctx.quadraticCurveTo(100, 400, 100, 300);
+                ctx.fillStyle = 'pink';
+                ctx.fill();
+            };
+        </script>
+    </body>
+</html>

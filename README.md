@@ -71,3 +71,9 @@ Canvas API 提供了一个通过 JavaScript 和 HTML 的<canvas>元素来绘制�
 #### 圆角矩形
 
 -   圆角矩形需要确定八个点，然后依次绘制就行 [demo17](https://github.com/YaliixxG/Canvas/blob/main/demo17.html)
+
+#### 二次贝塞尔曲线
+
+-   quadraticCurveTo(控制点 x, 控制点 y, 结束点 x, 结束点 y);
+    -   由 moveTo()/lineTo()决定开始点 [demo18](https://github.com/YaliixxG/Canvas/blob/main/demo18.html)
+    -   画爱心，连续调用 quadraticCurveTo()进行绘制，分成四段曲线，则调用四次 [demo19](https://github.com/YaliixxG/Canvas/blob/main/demo19.html)
